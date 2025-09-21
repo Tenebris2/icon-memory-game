@@ -117,7 +117,7 @@ body {
 }
 
 .icon-selection {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #333;
     cursor: pointer;
     transition: transform 0.2s;

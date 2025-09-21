@@ -33,7 +33,7 @@
         }
 
         const progressBar = document.getElementById('progress-bar');
-        const totalTime = level * 1500;
+        const totalTime = 1500;
         let timeLeft = totalTime;
 
         const timer = setInterval(() => {
@@ -46,7 +46,7 @@
             }
         }, 100);
 
-        setTimeout(nextLevel, level * 1500);
+        setTimeout(nextLevel, totalTime);
     </script>
 </body>
 </html>
