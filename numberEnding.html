@@ -16,10 +16,7 @@
 <body>
     <div class="mainScreen">
         <h1 class="mainLevel" id="currentLevel"></h1>
-        <h3 class="mainNumberLabel">Correct Sequence</h3>
-        <div id="correct-sequence-display" class="icon-sequence-container"></div>
-        <h3 class="mainNumberLabel">Your Sequence</h3>
-        <div id="user-sequence-display" class="icon-sequence-container"></div>
+        <h2 class="mainDescription">You're correct!</h2>
         
         <a href="numberLoading.html">
             <button class="mainButton">Next</button>
@@ -27,23 +24,6 @@
     </div>
 
     <script>
-        const correctSequence = JSON.parse(localStorage.getItem("icon-sequence-answer"));
-        const userSequence = correctSequence; // If they got it right, the sequences are the same
-
-        const correctContainer = document.getElementById('correct-sequence-display');
-        for (const iconClass of correctSequence) {
-            const iconElement = document.createElement('i');
-            iconElement.className = iconClass + ' icon-display';
-            correctContainer.appendChild(iconElement);
-        }
-
-        const userContainer = document.getElementById('user-sequence-display');
-        for (const iconClass of userSequence) {
-            const iconElement = document.createElement('i');
-            iconElement.className = iconClass + ' icon-display';
-            userContainer.appendChild(iconElement);
-        }
-
         const currentLevel = document.getElementById("currentLevel");
         currentLevel.innerHTML = "Level " + (localStorage.getItem("level") - 1);
     </script>
