@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Memory</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+<body>
+    <div class="mainScreen">
+        <div id="generatedValue" class="icon-sequence-container"></div>
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+    
+    <script>
+        const level = localStorage.getItem("level") || 1;
+        const sequence = generateIconSequence(level);
+        localStorage.setItem("icon-sequence-answer", JSON.stringify(sequence));
+
+        const container = document.getElementById('generatedValue');
+        for (const iconClass of sequence) {
+            const iconElement = document.createElement('i');
+            iconElement.className = iconClass + ' icon-display';
+            container.appendChild(iconElement);
+        }
+
+        const progressBar = document.getElementById('progress-bar');
+        const totalTime = level * 1500;
+        let timeLeft = totalTime;
+
+        const timer = setInterval(() => {
+            timeLeft -= 100;
+            const progress = (timeLeft / totalTime) * 100;
+            progressBar.style.width = progress + '%';
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+            }
+        }, 100);
+
+        setTimeout(nextLevel, level * 1500);
+    </script>
+</body>
+</html>

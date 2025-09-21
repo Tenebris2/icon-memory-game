@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Memory - Correct</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="index.js"></script>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+<body>
+    <div class="mainScreen">
+        <h1 class="mainLevel" id="currentLevel"></h1>
+        <h3 class="mainNumberLabel">Correct Sequence</h3>
+        <div id="correct-sequence-display" class="icon-sequence-container"></div>
+        <h3 class="mainNumberLabel">Your Sequence</h3>
+        <div id="user-sequence-display" class="icon-sequence-container"></div>
+        
+        <a href="numberLoading.html">
+            <button class="mainButton">Next</button>
+        </a>
+    </div>
+
+    <script>
+        const correctSequence = JSON.parse(localStorage.getItem("icon-sequence-answer"));
+        const userSequence = correctSequence; // If they got it right, the sequences are the same
+
+        const correctContainer = document.getElementById('correct-sequence-display');
+        for (const iconClass of correctSequence) {
+            const iconElement = document.createElement('i');
+            iconElement.className = iconClass + ' icon-display';
+            correctContainer.appendChild(iconElement);
+        }
+
+        const userContainer = document.getElementById('user-sequence-display');
+        for (const iconClass of userSequence) {
+            const iconElement = document.createElement('i');
+            iconElement.className = iconClass + ' icon-display';
+            userContainer.appendChild(iconElement);
+        }
+
+        const currentLevel = document.getElementById("currentLevel");
+        currentLevel.innerHTML = "Level " + (localStorage.getItem("level") - 1);
+    </script>
+</body>
+</html>
