@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StackIcon from 'tech-stack-icons';
+import '../assets/styles/GameScreen.css'
 
 // Reverting to a hardcoded list of common tech stack keys
 const allTechStackKeys = [
