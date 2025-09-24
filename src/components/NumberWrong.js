@@ -1,5 +1,5 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../assets/styles/NumberWrong.css'
 
 function NumberWrong() {
   const navigate = useNavigate();
