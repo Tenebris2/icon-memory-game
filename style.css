@@ -140,3 +140,16 @@ body {
 a {
     text-decoration: none;
 }
+
+.devicon-react-original { color: #61DBFB; }
+.devicon-angularjs-plain { color: #B52E31; }
+.devicon-vuejs-plain { color: #41B883; }
+.devicon-javascript-plain { color: #F0DB4F; }
+.devicon-python-plain { color: #1b3888; }
+.devicon-nodejs-plain { color: #3C873A; }
+.devicon-java-plain { color: #EA2D2E; }
+.devicon-cplusplus-plain { color: #00599C; }
+.devicon-go-plain { color: #00ADD8; }
+.devicon-ruby-plain { color: #E0115F; }
+.devicon-swift-plain { color: #8C7B6B; }
+.devicon-kotlin-plain { color: #E24462; }
